@@ -41,3 +41,14 @@ add = A+B
 result = add[0] # this reduces number of brackets
 print(result)
     
+print("\n Matrix Subtraction:")
+sub = A-B
+print(sub)
+
+print("\n Matrix Multiplication:")
+mul = A*B
+print(mul)
+
+print("\n Matrix Division:")
+div = A/B
+print(div)
