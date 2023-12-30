@@ -30,6 +30,8 @@ def calculator(X, Y):
             print(f"{X} ^ {Y} = {(X**Y)}")
         case '//':
             print(f"{X} // {Y} = {(X//Y)}")
+        case _ :
+            print("Invalid choice")
                     
 
 # Test case for the function
