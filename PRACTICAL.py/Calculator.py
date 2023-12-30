@@ -30,6 +30,8 @@ def calculator(X, Y):
             print(f"{X} ^ {Y} = {(X**Y)}")
         case '//':
             print(f"{X} // {Y} = {(X//Y)}")
+# If user not selected the given operations then
+# we use default case for unwanted errors
         case _ :
             print("Invalid choice")
                     
