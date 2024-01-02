@@ -57,7 +57,7 @@ if __name__ == '__main__':
             
             elif "youtube" in voice:
                 webbrowser.open("https://www.youtube.com/channel/UCTowQ2L_f2cEn16m1xLxvYg")
-
+# webbrowser module is used to redirect to any media that is given in the path
             elif "chat gpt" in voice:
                 webbrowser.open("https://chat.openai.com")
 
