@@ -60,6 +60,9 @@ if __name__ == '__main__':
 
             elif "chat gpt" in voice:
                 webbrowser.open("https://chat.openai.com")
+
+            elif "git hub" in voice:
+                webbrowser.open("https://github.com")
             
             elif "joke" in voice:
                 joke = pyjokes.get_joke(language="en")
