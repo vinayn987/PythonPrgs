@@ -70,10 +70,10 @@ if __name__ == '__main__':
                 assist_spech(joke)
             
             elif 'play song' in voice:
-                push = r"C:\Users\vinay\Music\My_music"# write a songs path here
+                push = r"C:"# write a songs path here
                 songlist = os.listdir(push) # collecting all the songs to one list
                 print(songlist)
-                song_path = os.path.join(push, songlist[0]) # song started from index zero
+                song_path = os.path.join(push, songlist[1]) # song started from index zero
                 os.startfile(song_path) # playing a song
 
 
