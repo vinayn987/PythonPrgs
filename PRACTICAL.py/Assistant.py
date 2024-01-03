@@ -70,7 +70,7 @@ if __name__ == '__main__':
                 assist_spech(joke)
             
             elif 'play song' in voice:
-                push = "C:"# write a songs path here
+                push = r"C:\Users\vinay\Music\My_music"# write a songs path here
                 songlist = os.listdir(push) # collecting all the songs to one list
                 print(songlist)
                 song_path = os.path.join(push, songlist[0]) # song started from index zero
@@ -78,7 +78,7 @@ if __name__ == '__main__':
 
 
             elif 'exit' in voice:
-                assist_spech("GoodBye! See you soon.")
+                assist_spech("Good Bye! See you soon.")
                 break
             time.sleep(6) # taking six seconds after every output to listen again
         
