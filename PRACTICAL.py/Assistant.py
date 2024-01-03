@@ -56,12 +56,16 @@ if __name__ == '__main__':
                 assist_spech(present)
             
             elif "youtube" in voice:
+                assist_spech("Opening Vinay's Youtube Channel")
                 webbrowser.open("https://www.youtube.com/channel/UCTowQ2L_f2cEn16m1xLxvYg")
+
 # webbrowser module is used to redirect to any media that is given in the path
             elif "chat gpt" in voice:
+                assist_spech("Opening Chat GPT")
                 webbrowser.open("https://chat.openai.com")
 
-            elif "git hub" in voice:
+            elif "github" in voice:
+                assist_spech("Opening git Hub")
                 webbrowser.open("https://github.com")
             
             elif "joke" in voice:
