@@ -1,44 +1,48 @@
-# Creating calculator using match case statement
+import tkinter as tk
 
-"""Creating a function 
-calculator(parameter1, parameter2):
+def on_click(value):
+    current = entry.get()
+    entry.delete(0, tk.END)
+    entry.insert(tk.END, current + value)
 
-parameters: Get the input from the user and evaluate
-             in the match case according to the selected
-             choice
-return: In match case there is number of cases in which 
-        the selected case evaluate the values and 
-        display the output
+def clear_entry():
+    entry.delete(0, tk.END)
 
+def calculate():
+    try:
+        result = eval(entry.get())
+        entry.delete(0, tk.END)
+        entry.insert(tk.END, str(result))
+    except Exception as e:
+        entry.delete(0, tk.END)
+        entry.insert(tk.END, "Error")
 
-"""
-def calculator(X, Y):
+# Create the main window
+root = tk.Tk()
+root.title("Simple Calculator")
 
-    choice = input("\nPlease select your operation '+\-\*\%\/\**\//' ==> ")
-    match choice:
-        case '+':
-            print(f"{X} + {Y} = {(X+Y)}")
-        case '-':
-            print(f"{X} - {Y} = {(X-Y)}")
-        case '*':
-            print(f"{X} * {Y} = {(X*Y)}")
-        case '/':
-            print(f"{X} / {Y} = {(X/Y)}")
-        case '%':
-            print(f"{X} % {Y} = {(X%Y)}")
-        case '**':
-            print(f"{X} ^ {Y} = {(X**Y)}")
-        case '//':
-            print(f"{X} // {Y} = {(X//Y)}")
-# If user not selected the given operations then
-# we use default case for unwanted errors
-        case _ :
-            print("Invalid choice")
-                    
+# Entry widget for displaying and entering numbers
+entry = tk.Entry(root, width=20, font=('Arial', 16))
+entry.grid(row=0, column=0, columnspan=4)
 
-# Test case for the function
-print("\nPlease enter two integer values to perform operations ")  
-numberX = int(input("1st==> "))
-numberY = int(input("2nd==> "))
+# Buttons
+buttons = [
+    '7', '8', '9', '/',
+    '4', '5', '6', '*',
+    '1', '2', '3', '-',
+    '0', 'C', '=', '+'
+]
 
-calculator(numberX, numberY)
+row_val = 1
+col_val = 0
+
+for button in buttons:
+    tk.Button(root, text=button, width=5, height=2,
+              command=lambda b=button: on_click(b) if b != '=' else calculate() if b == '=' else clear_entry()).grid(row=row_val, column=col_val)
+    col_val += 1
+    if col_val > 3:
+        col_val = 0
+        row_val += 1
+
+# Run the Tkinter event loop
+root.mainloop()
