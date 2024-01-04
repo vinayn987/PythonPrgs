@@ -10,4 +10,8 @@ view = Qr.make_image(fill_color = "blue", back_color = "yellow") # setting color
 
 view.save("ChatGPT.png") # save the file in png format
 
+import inspect 
+import fraction
 
+source = inspect.getsource(fraction)
+print(source)
