@@ -21,3 +21,25 @@ is called Aggregation
 """
 print(cust.address.pin)
 # output: 210003
+
+# Representation of Hierarchical Inheritance using simple class
+class Student:
+    def __init__(self, name, sno):
+        self.name = name
+        self.sno = sno
+        self.crse = "BCA"
+
+class Abhinav(Student):
+   def s_details(self):
+       return self.name, self.sno, self.crse
+
+class Varun(Student):
+    def s_details(self):
+        return self.name, self.sno, self.crse
+    
+
+see = Varun("Varun", "1001")
+show = Abhinav("Abhinav", "1002")
+
+print(see.s_details()) # ('Varun', '1001', 'BCA')
+print(show.s_details()) # ('Abhinav', '1002', 'BCA')
